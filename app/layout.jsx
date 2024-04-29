@@ -1,6 +1,7 @@
 import Navbar from "@components/Navbar";
 import Provider from "@components/Provider";
 import "@styles/globals.css";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "trymeoprompt",
@@ -15,7 +16,9 @@ const Layout = ({ children }) => {
             <div className="gradient"></div>
           </div>
           <Navbar />
-          <main className="app">{children}</main>
+          <main className="app">
+            <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+          </main>
         </Provider>
       </body>
     </html>
