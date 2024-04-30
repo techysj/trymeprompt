@@ -4,7 +4,7 @@ import "@styles/globals.css";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "trymeoprompt",
+  title: "TRY ME PROMPT",
   description: "TRY ME PROMPT",
 };
 const Layout = ({ children }) => {

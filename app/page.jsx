@@ -7,8 +7,9 @@ const Home = () => {
         <p className="">Discover and Create</p>
         <p className="orange_gradient ">AI powered prompts</p>
       </div>
-      <p className="text-xl text-center mt-4">
-        Try me propmt is an open source AI powered propmt tool{" "}
+      <p className="desc text-center">
+        Try me prompt is an open-source AI prompting tool for modern world to
+        discover, create and share creative prompts
       </p>
       <Feed />
     </section>
