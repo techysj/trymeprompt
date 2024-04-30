@@ -59,15 +59,9 @@ const Feed = () => {
   };
   useEffect(() => {
     const getPosts = async () => {
-      try {
-        const res = await fetch("/api/promt");
-        const data = await res.json();
-        if (res.ok) {
-          setPosts(data);
-        }
-      } catch (error) {
-        console.log(error);
-      }
+      const res = await fetch("/api/promt");
+      const data = await res.json();
+      setPosts(data);
     };
     getPosts();
   }, []);

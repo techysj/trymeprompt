@@ -48,7 +48,10 @@ const Navbar = () => {
             <Link href="/create-post" className="black_btn">
               Create Post
             </Link>
-            <button className="outline_btn" onClick={signOut}>
+            <button
+              className="outline_btn"
+              onClick={() => signOut({ callbackUrl: "/", redirect: true })}
+            >
               Sign Out
             </button>
             <Image
@@ -121,7 +124,7 @@ const Navbar = () => {
                     className="outline_btn"
                     onClick={() => {
                       setShowMenu(false);
-                      signOut();
+                      signOut({ callbackUrl: "/", redirect: true });
                     }}
                   >
                     Sign Out
