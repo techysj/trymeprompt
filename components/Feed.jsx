@@ -57,14 +57,14 @@ const Feed = () => {
     const searchResult = filterPrompts("");
     setSearchedResults(searchResult);
   };
+  const getPosts = async () => {
+    const res = await fetch("/api/promt");
+    const data = await res.json();
+    setPosts(data);
+  };
   useEffect(() => {
-    const getPosts = async () => {
-      const res = await fetch("/api/promt");
-      const data = await res.json();
-      setPosts(data);
-    };
     getPosts();
-  }, []);
+  }, [posts]);
 
   return (
     <section className="feed">

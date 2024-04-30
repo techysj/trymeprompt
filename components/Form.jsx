@@ -30,7 +30,7 @@ const Form = ({ type, post, setPost, handleSubmit, submit }) => {
         </label>
         <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
-            Tags (#webdeb, #cybersec):
+            Tags (#webdev, #cybersec):
           </span>
           <input
             value={post.tag}
