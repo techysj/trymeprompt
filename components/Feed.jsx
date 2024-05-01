@@ -64,7 +64,7 @@ const Feed = () => {
   };
   useEffect(() => {
     getPosts();
-  }, [posts]);
+  }, []);
 
   return (
     <section className="feed">
