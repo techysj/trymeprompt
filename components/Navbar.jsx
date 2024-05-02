@@ -73,7 +73,11 @@ const Navbar = () => {
                   className="black_btn"
                   type="button"
                   key={provider.name}
-                  onClick={() => signIn(provider.id)}
+                  onClick={() =>
+                    signIn(provider.id, {
+                      callbackUrl: "/",
+                    })
+                  }
                 >
                   Sign In
                 </button>
@@ -140,7 +144,11 @@ const Navbar = () => {
                 <button
                   className="black_btn"
                   key={provider.name}
-                  onClick={() => signIn(provider.id)}
+                  onClick={() =>
+                    signIn(provider.id, {
+                      callbackUrl: "/",
+                    })
+                  }
                 >
                   Sign In
                 </button>
