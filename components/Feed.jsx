@@ -6,7 +6,7 @@ import EmptyFeed from "./EmptyFeed";
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
-    <div className="mt-10 prompt_layout ">
+    <div className="my-10 prompt_layout ">
       {data.map((post) => (
         <PromptCard
           key={post?._id}
@@ -67,8 +67,8 @@ const Feed = () => {
   }, []);
 
   return (
-    <section className="feed">
-      <form className="relative w-full flex-center">
+    <>
+      <form className="relative w-full max-w-xl mt-10 flex-center">
         <input
           type="text"
           placeholder="Search for a tag or a username"
@@ -91,25 +91,26 @@ const Feed = () => {
           </span>
         )}
       </form>
-
-      {posts.length ? (
-        searchText ? (
-          <PromptCardList
-            data={searchedResults}
-            handleTagClick={handleTagClick}
-          />
+      <section className="feed">
+        {posts.length ? (
+          searchText ? (
+            <PromptCardList
+              data={searchedResults}
+              handleTagClick={handleTagClick}
+            />
+          ) : (
+            <PromptCardList data={posts} handleTagClick={handleTagClick} />
+          )
         ) : (
-          <PromptCardList data={posts} handleTagClick={handleTagClick} />
-        )
-      ) : (
-        <EmptyFeed
-          text="Oops! Looks like we're in uncharted territory. Please try again or
+          <EmptyFeed
+            text="Oops! Looks like we're in uncharted territory. Please try again or
         explore something new!"
-          align="items-center"
-          textAlign="text-center"
-        />
-      )}
-    </section>
+            align="items-center"
+            textAlign="text-center"
+          />
+        )}
+      </section>
+    </>
   );
 };
 
